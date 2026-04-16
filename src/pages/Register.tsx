@@ -11,7 +11,7 @@ export const Register: React.FC = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [role, setRole] = useState<'guardian' | 'therapist'>('guardian');
-    
+
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
     const navigate = useNavigate();
@@ -74,7 +74,7 @@ export const Register: React.FC = () => {
 
             {/* Right Side: Register Form */}
             <div className="flex flex-1 flex-col items-center justify-center px-4 py-8 sm:px-6 relative overflow-y-auto bg-slate-50 lg:bg-white w-full lg:w-1/2 min-h-screen custom-scrollbar">
-                
+
                 {/* Mobile Decorative Blobs */}
                 <div className="absolute top-0 right-0 w-[40%] h-[40%] bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 lg:hidden" />
                 <div className="absolute bottom-0 left-0 w-[40%] h-[40%] bg-indigo-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 lg:hidden" />
@@ -107,11 +107,10 @@ export const Register: React.FC = () => {
                                     <button
                                         type="button"
                                         onClick={() => setRole('guardian')}
-                                        className={`relative flex flex-col p-4 border rounded-xl shadow-sm transition-all duration-200 text-left ${
-                                            role === 'guardian' 
-                                                ? 'border-purple-600 bg-purple-50 ring-1 ring-purple-600' 
-                                                : 'border-slate-200 bg-white hover:border-purple-300 hover:bg-slate-50'
-                                        }`}
+                                        className={`relative flex flex-col p-4 border rounded-xl shadow-sm transition-all duration-200 text-left ${role === 'guardian'
+                                            ? 'border-purple-600 bg-purple-50 ring-1 ring-purple-600'
+                                            : 'border-slate-200 bg-white hover:border-purple-300 hover:bg-slate-50'
+                                            }`}
                                     >
                                         <Heart className={`w-6 h-6 mb-2 ${role === 'guardian' ? 'text-purple-600' : 'text-slate-400'}`} />
                                         <span className={`font-semibold text-sm ${role === 'guardian' ? 'text-purple-900' : 'text-slate-700'}`}>
@@ -121,15 +120,14 @@ export const Register: React.FC = () => {
                                             I want to oversee my child's progress.
                                         </span>
                                     </button>
-                                    
+
                                     <button
                                         type="button"
                                         onClick={() => setRole('therapist')}
-                                        className={`relative flex flex-col p-4 border rounded-xl shadow-sm transition-all duration-200 text-left ${
-                                            role === 'therapist' 
-                                                ? 'border-purple-600 bg-purple-50 ring-1 ring-purple-600' 
-                                                : 'border-slate-200 bg-white hover:border-purple-300 hover:bg-slate-50'
-                                        }`}
+                                        className={`relative flex flex-col p-4 border rounded-xl shadow-sm transition-all duration-200 text-left ${role === 'therapist'
+                                            ? 'border-purple-600 bg-purple-50 ring-1 ring-purple-600'
+                                            : 'border-slate-200 bg-white hover:border-purple-300 hover:bg-slate-50'
+                                            }`}
                                     >
                                         <Stethoscope className={`w-6 h-6 mb-2 ${role === 'therapist' ? 'text-purple-600' : 'text-slate-400'}`} />
                                         <span className={`font-semibold text-sm ${role === 'therapist' ? 'text-purple-900' : 'text-slate-700'}`}>
