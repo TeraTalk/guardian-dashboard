@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { api } from '../lib/api';
 import { useAuth } from '../contexts/AuthContext';
 import { LogIn, Loader2, Sparkles } from 'lucide-react';
@@ -32,7 +32,11 @@ export const Login: React.FC = () => {
             }
 
             signIn(accessToken, user);
-            navigate('/');
+            if (user.role === 'therapist') {
+                navigate('/therapist-dashboard');
+            } else {
+                navigate('/');
+            }
         } catch (err: any) {
             setError(err.response?.data?.message || err.response?.data?.error || err.message || 'Failed to sign in');
         } finally {
@@ -157,9 +161,9 @@ export const Login: React.FC = () => {
 
                         <div className="mt-8 text-center text-sm text-slate-500 font-medium">
                             Don't have an account?{' '}
-                            <span className="text-purple-600 hover:text-purple-500 transition-colors font-semibold cursor-pointer">
-                                Download the app to register
-                            </span>
+                            <Link to="/register" className="text-purple-600 hover:text-purple-500 transition-colors font-semibold cursor-pointer">
+                                Register here
+                            </Link>
                         </div>
                     </div>
                 </div>
