@@ -1,7 +1,7 @@
 import React from 'react';
 import { Outlet, NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
-import { Home, UserCircle, LogOut, Heart, TrendingDown, Bell, BookOpen, Volume2 } from 'lucide-react';
+import { Home, UserCircle, LogOut, Heart, TrendingDown, Bell, BookOpen, Volume2, Search } from 'lucide-react';
 import { cn } from '../lib/utils';
 
 export const Layout: React.FC = () => {
@@ -18,6 +18,7 @@ export const Layout: React.FC = () => {
         { label: 'Analytics', path: '/analytics', icon: TrendingDown },
         { label: 'Journal', path: '/journal', icon: BookOpen },
         { label: 'Sound Board', path: '/curriculum', icon: Volume2 },
+        { label: 'Find a Therapist', path: '/find-therapist', icon: Search },
         { label: 'Notifications', path: '/settings', icon: Bell },
         { label: 'Profile', path: '/profile', icon: UserCircle },
     ];
