@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import { api } from '../lib/api';
 import { 
-    Stethoscope, Users, Calendar, LogOut, Package as PkgIcon, 
+    Stethoscope, Users, LogOut, Package as PkgIcon, 
     CheckCircle, XCircle, Plus, Activity, Clock, UserCircle, Upload,
     Send, ArrowLeft
 } from 'lucide-react';
